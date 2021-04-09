@@ -1,0 +1,93 @@
+1. Ladda ner och installera Node LTS
+Kontrollera att du har gjort rätt genom att skriva i terminalen: node -v. 
+KLAR 
+
+2a. Skapa en fil med namnet script.js och följande innehåll:
+console.log('Welcome to script.js');
+Kör den genom att skriva: node script.js
+KLAR
+
+2b. Ändra skriptet så att du använder features från vanlig "vanilla" JavaScript. Prova variabler, funktioner, arrayer och objekt.
+KLAR
+
+2c. Nu ska du prova moduler. Lägg en funktion i en annan fil. Använd require för att importera funktionen.
+KLAR
+
+
+3. Skapa en package.json fil med npm init. Installera npm-paketet sanitize-html och använd det för att skriva en ny funktion, printSafe, som kan skriva ut strängar utan att man ser HTML-koden. 
+let testData1 = 'This is a safe string';
+let testData2 = 'This is a <strong>unsafe</strong> string, because it contains HTML';
+
+function printUnsafe(fromUser) {
+    // Hoppsan! Om fromUser innehåller  
+    console.log(fromUser);
+}
+KLAR
+
+4. Välj ut ett eller flera små npm-paket från parro-it/awesome-micro-npm-packages och skriv skriptfiler för att testa dem.
+KLAR
+
+5. nodemon är ett npm-paket som kan användas för att starta om ett skript när filer ändras. Prova att starta script.js med det i stället: npx nodemon script.js
+Gör sedan en ändring i script.js och spara filen. Vad händer? (Avsluta med Ctrl+C)
+Svar: det som händer är att den uppdaterar automatiskt i terminalen. Så när jag sparar min ändring så skrivs resultatet ut direkt i terminalen. Jag får fram ändringen direkt och behöver inte köra om filen igen i terminalen. Den ligger och väntar på att köras så fort jag sparar senare ändringar i min fil. 
+KLAR
+
+6. Skapa en ny fil med namnet "module.js" med innehållet
+function fun() {
+    console.log('This is a function in a module');
+}
+// export the fun function
+
+Exportera "fun", importera den i script.js och anropa den. Kontrollera att du får utskriften. Detta att lägga kod i olika filer använder vi för att strukturera vår kod.
+KLAR
+
+7. Skapa en fil med namnet "personData.json". Den ska innehålla ett JavaScript-objekt i JSON-format som representerar en användare. Nu ska du använda Nodes fs-modul (fs == file system) för att hämta och ändra datan. Exempel på objekt:
+{
+    "name": "David",
+    "email": "david@example.com"
+}
+KLAR
+
+8a. Skapa en fil med namnet "readData.js". När man kör den ska skriptet läsa innehållet i "personData.json", omvandla det från JSON till ett JavaScript-objekt och skriva ut namn+email på konsolen. Använd fs.readFile för att läsa in hela filen på en gång.
+KLAR 
+
+8b*. Använd fs.createReadStream i stället för fs.readFile. Vad är skillnaden mellan readFile och createReadStream?
+Svar: readFile inväntar att hela filen ska laddas och komma tillbaka till oss. createReadStream är istället för större filer eller om man har delar av text man vill få tillbaka. Man kan göra så att man får delar av text tilldelat till sig istället för hela på en gång tex. 
+KLAR
+
+9. Skapa en fil med namnet "writeData.js". När man kör den ska skriptet fråga användaren efter ett nytt namn och ny e-postadress. Det ska sparas i "personData.json". Använd process.stdin.
+KLAR
+
+10 Skriv ett skript som skriver ut "What is your name?" och väntar på att användaren ska skriva in en sträng. Sedan ska skriptet skriva ut "Welcome, [namnet man skrev in]".
+KLAR
+
+11* Du kan kombinera read/write till en fil och bygga ett enkelt textbaserat användargränssnitt. Exempel:
+** Personal data editor **
+Choose an option:
+1 View data
+2 Update data
+> 2
+New name?
+> Nisse
+New email?
+> nisse@skogen.se
+Data updated.
+(visa menyn igen)
+EJ KLAR
+
+12* Skapa ett skript som slumpar ett tal mellan 1 och 100. Låt användaren gissa talet och räkna antal gissningar. Om man gissar för högt eller för lågt ska skriptet tala om det. Exempel på körning:
+** Welcome to guess the number! **
+Please enter a number between 1 and 100.
+> 25
+Too low! (1 guess)
+> 81
+Too high! (2 guesses)
+> 73
+Correct!! You win in 3 guesses.
+EJ KLAR
+
+
+GIT ÖVNINGAR 
+1. Skapa ett git-repository i en mapp där du jobbade med övningarna. Skriv "git init" i terminalen. Träna på att använda: git add, git commit, git status. Om något går fel kan du ta bort ".git" mappen och börja om.
+
+

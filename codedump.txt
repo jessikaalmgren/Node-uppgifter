@@ -1,0 +1,30 @@
+process.stdin.on('data', data => {
+	//let string = data.toString().trim()
+	answer = data
+	if (answer == 1){
+		console.log('Your answer is 1')
+		fs.readFile('./personData.json', (err, data) =>{
+			if (err) {
+				console.log('Det gick inte att läsa filen' + err.message)
+				return
+		}
+			let objekt = JSON.parse(data)
+			console.log('Namn: ' + objekt.name)
+			console.log('Email: ' + objekt.email)	
+		})
+	}else if(answer == 2){
+		console.log('New name?')
+		process.stdin.on('data', data => {
+			let string = data.toString().trim()
+			name = string
+			console.log('New email?')
+			process.stdin.on('data', data =>{
+				let string2 = data.toString().trim()
+				email = string2
+				writeToFile({name, email})
+				//console.log(name)
+			})
+			
+		}) 
+	} 
+})
