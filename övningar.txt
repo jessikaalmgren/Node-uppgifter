@@ -95,4 +95,9 @@ KLAR
 KLAR
 
 3. Skapa en branch med namnet "feature-branch" och träna på att växla till den. Gör en ny fil och committa den till branchen.
+KLAR
+
+4. Hämta över den nya filen från feature-branch till main med git merge.
+KLAR
+
 
